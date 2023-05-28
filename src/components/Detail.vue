@@ -5,7 +5,8 @@
       <div class="img">
         <img :src="destination.foto" alt="" style="width: 100%; margin-bottom: 30px"/>
       </div>
-      <h2>About {{ destination.nama }}</h2>
+      <h2>Tentang {{ destination.nama }}</h2>
+      <br>
       <p>{{ destination.deskripsi }}</p>
     </div>
   </main>
@@ -20,6 +21,7 @@ import Nav from "./Nav.vue";
 @import "../assets/css/bootstrap.min.css";
 
 .container {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,10 +38,6 @@ import Nav from "./Nav.vue";
   align-content: center;
 }
 
-.Anfield {
-  margin-top: 20px;
-  text-align: center;
-}
 </style>
 
 <script>

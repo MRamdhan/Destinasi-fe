@@ -4,7 +4,7 @@
     <a
       href="/tambah"
       class="btn btn-success"
-      style="margin-left: 100px; margin-top: 100px"
+      style="margin-left: 100px; margin-top: 50px"
     >
       Tambah
     </a>

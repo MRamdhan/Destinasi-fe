@@ -1,18 +1,15 @@
 <template>
-  <main>
-    <Nav></Nav>
-    <div
-      class="container mt-5 d-flex justify-content-center align-items-center"
-    >
-      <h1 class="text-center mt-5">Destinasi Wisata</h1>
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-3" v-for="des in destinations" :key="des.id">
-            <div class="card">
-              <img :src="des.foto" alt="" class="card-image-top" />
-              <div class="card-body">
-                <h3 class="card-title">{{ des.nama }}</h3>
-              </div>
+  <main class="fullscreen-bg">
+    <Nav :isAdmin="isAdmin"></Nav>
+    <div class="container mt-5">
+      <h1 class="text-center ">Destinasi Wisata</h1>
+      <div class="row mt-5">
+        <div class="col-4" v-for="des in destinations" :key="des.id">
+          <div class="card">
+            <img :src="des.foto" alt="" class="card-image-top" />
+            <div class="card-body">
+              <h3 class="card-title">{{ des.nama }}</h3>
+              <p class="card-text">{{ des.alamat }}</p>
               <router-link
                 to="/detail"
                 @click.prevent="detailId(des.id)"
@@ -36,12 +33,35 @@ import Nav from "./Nav.vue";
 <style>
 @import "../assets/css/bootstrap.min.css";
 
-/* main {
-    background-image: url("../../public/img/alam.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-} */
+.fullscreen-bg {
+  min-height: 200vh;
+  background-image: url("../../public/img/putih.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.card-image-top {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin-bottom: 20px;
+}
 </style>
 
 <script>
@@ -52,6 +72,7 @@ export default {
     return {
       destinations: [],
       token: localStorage.getItem("token"),
+      isAdmin: false,
     };
   },
   mounted() {
