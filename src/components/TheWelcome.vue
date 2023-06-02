@@ -84,7 +84,7 @@ export default {
         Authorization: "Bearer " + this.token,
       };
       axios
-        .get("http://127.0.0.1:8000/api/v1/destination", { headers })
+        .get("http://127.0.0.1:8000/api/v1/destinations", { headers })
         .then((res) => {
           this.destinations = res.data.Destination;
         })

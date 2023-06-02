@@ -1,7 +1,7 @@
 <template>
   <main>
     <Nav></Nav>
-    <div class="container">
+    <div class="container mt-5">
       <div class="img">
         <img :src="destination.foto" alt="" style="width: 100%; margin-bottom: 30px"/>
       </div>

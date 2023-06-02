@@ -9,6 +9,7 @@
 
 <script>
 import axios from 'axios'
+import Swal from "sweetalert2";
 
 export default {
   data() {
@@ -36,7 +37,11 @@ export default {
         .post("http://localhost:8000/api/v1/auth/logout", {}, { headers })
         .then(() => {
           localStorage.removeItem('token');
-          this.isAdmin = false;          
+          this.isAdmin = false;
+          Swal.fire({
+            icon : 'success',
+            text : 'Logout berhasil'
+          });          
           this.$router.push("/");
         })
         .catch((err) => {
